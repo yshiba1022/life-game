@@ -1,4 +1,5 @@
 import pyxel
+import time
 
 SCREEN_WIDTH=160
 SCREEN_HEIGHT=256
@@ -96,6 +97,9 @@ class App:
     def draw(self):
         pyxel.cls(0)
 
+        if self.state == STATE_GO:
+            time.sleep(0.1)
+            
         for i in range(SCREEN_HEIGHT):
             for j in range(SCREEN_WIDTH):
                 if self.today_state[i][j]:
